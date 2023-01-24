@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Listener</title>
+    <style>
+        body {
+            background-color: rgb(22, 245, 245);
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 0;
+            margin: 0;
+            background-color: aquamarine;
+            height: 100vh;
+
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5em;
+            margin-top: 7em;
+        }
+        .card {
+            background-color: rgba(121, 117, 112, 0.5);
+            font-size: larger;
+            /* height: 150px;  */
+            padding: 1rem; 
+            border: 1px solid black;
+            border-radius: 10px;
+        }
+        #main-heading {
+            text-align: center;
+            font-size: 3.5rem;
+        }
+        /* #heading {} */
+        #btn {
+            background-color: rgba(121, 117, 112, 0.5);
+            font-size: 1.1rem;
+            font-weight: bold;
+            padding: 1em 3em;
+            outline: none;
+            cursor: pointer;
+            display: block;
+            margin: 7rem auto 2.5rem;
+            border-radius: 10px;
+        }
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .list-item {
+            background-color: #fff;
+            text-align: center;
+            padding: .5rem;
+            border: 1px solid black;
+            cursor: pointer;
+        }
+        a {
+            color: black;
+            text-decoration: none;
+
+        }
+    </style>
+</head>
+<body>
+    <h1 id="main-heading">Event Listener</h1>
+    <div class="container">
+        <div class="card card1">
+                <h1 id="heading">Example1</h1>
+                <button id="btn" class="btn-1" onclick="alert('I Love Javascript')">Enter</button>
+        </div>
+        <div class="card card2">
+            <h1 id="heading">Example2</h1>
+            <button id="btn" class="btn-2">Enter</button>
+        </div>
+        <div class="card card3">
+            <h1 id="heading">Example3</h1>
+            <button id="btn" class="btn-3">Enter</button>
+        </div>
+    </div>
+
+    <script>
+        console.log("test")
+
+        // adding event listner
+        const buttonTwo = document.querySelector(".btn-2")
+
+        function alertBtn(){
+            alert('I love also JavaScritp!')
+        }
+
+        buttonTwo.addEventListener('click', alertBtn)
+
+        // mouseover
+        const cardThree = document.querySelector('.card3')
+
+        function changeBgColor() {
+            cardThree.style.backgroundColor = "darkgreen"
+        }
+
+        cardThree.addEventListener('mouseover', changeBgColor)
+    </script>
+</body>
+</html>

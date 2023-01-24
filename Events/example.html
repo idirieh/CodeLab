@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Propagation</title>
+    <style>
+        body {
+            background-color: rgb(22, 245, 245);;
+            padding: 0;
+            margin: 0;
+            height: 100vh;
+            border: 10px solid;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+        div {
+            border: 5px solid black;
+            height: 50%;
+            width: 50%;
+            font-size: 1.3rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+        }
+        .div1 {
+            display: flex;
+            
+        }
+        #btn {
+            background-color: inherit;
+            font-size: 1.1rem;
+            font-weight: bold;
+            padding: .5em 1em;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="div1">
+        1
+        <div class="div2" >
+            2
+            <button id="btn">Click</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

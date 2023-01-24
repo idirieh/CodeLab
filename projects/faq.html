@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ Page</title>
+    <style>
+        body {
+            background-image: url(img/q-mark.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            background-color: rgba(15, 15, 15, .7);
+            background-blend-mode: multiply;
+            height: 100vh;
+            font-family: cursive, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            background-color: #fff;
+            width: 65%;
+            max-width: 600px;
+            padding: 30px;
+            border-radius: 20px;
+            
+        }
+        .heading {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        /* .content {
+            padding: 20px;
+        } */
+        .question {
+            font-size: 1.3rem;
+            padding-bottom: 10px;
+            cursor: pointer;
+            border-bottom: 1px solid black;
+            position: relative;
+        }
+        .question::after {
+            content: "+";
+            font-size: 30px;
+            position: absolute;
+            right: 0;
+        }
+        .answer {
+            font-size: 1.2rem;
+            margin: 15px 0;
+            line-height: 1.5;
+            width: 100%;
+            height: 0;
+            overflow: hidden;
+            transition: 500ms;
+        }
+        .active .answer{
+            height: 150px;
+        }
+        .active .question {
+            font-size: 18px;
+            transform: 500ms;
+        }
+        .active .question::after {
+            content: "-";
+            font-size: 30px;
+            transform: 500ms;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="heading">Frequently Asked Questions</h2>
+
+            <div class="content">
+                <div class="question">What is the return Policy</div>
+                <div class="answer">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae sequi, laudantium eos magnam molestias reprehenderit atque natus maiores inventore sapiente, excepturi eveniet ipsum autem voluptate vel voluptates! Harum, dolor nulla.
+                </div>
+            </div>
+            <div class="content">
+                <div class="question">When will I receive my order</div>
+                <div class="answer">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae sequi, laudantium eos magnam molestias reprehenderit atque natus maiores inventore sapiente, excepturi eveniet ipsum autem voluptate vel voluptates! Harum, dolor nulla.
+                </div>
+            </div>
+            <div class="content">
+                <div class="question">Where are you located</div>
+                <div class="answer">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae sequi, laudantium eos magnam molestias reprehenderit atque natus maiores inventore sapiente, excepturi eveniet ipsum autem voluptate vel voluptates! Harum, dolor nulla.
+                </div>
+            </div>
+            
+
+    </div>
+
+    <script>
+        const accordion = document.getElementsByClassName("content")
+        // console.log(accordion)
+        
+        for( i = 0; i < accordion.length; i++) {
+            accordion[i].addEventListener('click', function(){
+                this.classList.toggle("active")
+            })
+
+        }
+    </script>
+</body>
+</html>
