@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Delegation</title>
+    <style>
+        body {
+            background-color: rgb(22, 245, 245);
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            height: 100vh;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            place-items: center;
+            border: 10px solid black;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .container {
+            background-color: rgba(121, 117, 112, 0.5);
+            font-size: 2rem;
+            font-weight: 600;
+            padding: 1em;
+            border-radius: 10px;
+            border: 1px solid black;
+        }
+        li {
+            background-color: transparent;
+            text-align: center;
+            padding: .5rem;
+            border: 1px solid black;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <ul class="list">
+            <li class="li" id="Football">Football</li>
+            <li class="li" id="Basketball">Basketball</li>
+            <li class="li" id="boxing">boxing</li>
+            <li class="li" id="tennis">tennis</li>
+            <li class="li" id="golf">golf</li>
+        </ul>
+    </div>
+
+<script>
+    let newItem = document.createElement('li');
+    let itemText = document.createTextNode('Cars');
+    let myList = document.querySelectorAll('.li');
+
+    // myList.forEach((b) => {
+    //     b.addEventListener('click', (e) => {
+    //         e.currentTarget.style.backgroundColor = 'teal';
+    //         console.log(e.target);
+    //         console.log(e.currentTarget);
+    // })
+    // });
+    
+    // same as the above but shorter
+    document.querySelector('.list').addEventListener('click', function(e) {
+        e.target.style.backgroundColor = 'cyan';
+        console.log(e.target.getAttribute('id') + ' is Clicked')
+    })
+
+    //check codeLab in YT
+
+    newItem.appendChild(itemText);
+    
+    document.querySelector('.list').appendChild(newItem)
+    
+    console.log(newItem)
+
+
+</script>
+</body>
+</html>
